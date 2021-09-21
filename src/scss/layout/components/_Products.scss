@@ -1,0 +1,34 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.Products {
+  .Products__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+
+    @include desktop {
+      display: flex;
+    }
+
+    .seccion {
+      padding-bottom: 50px;
+      border-bottom: 1px solid $grisClaro;
+    }
+
+    .products {
+      display: flex;
+      flex-direction: column;
+
+      @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+      }
+
+      div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

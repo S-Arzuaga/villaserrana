@@ -1,0 +1,132 @@
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.Home {
+  .container {
+    max-width: 1400px;
+    margin-top: 20px;
+
+    margin: 0 auto;
+
+    .seccion {
+      margin-top: 50px;
+    }
+
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    .Home__title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .Home__seccion {
+      border-bottom: 1px solid $grisClaro;
+      padding-bottom: 20px;
+
+      .products {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+
+        @include desktop {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          column-gap: 20px;
+        }
+
+        .home_product {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .vermas_button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 40px;
+
+        @include desktop {
+          padding: 0;
+        }
+        .vermas-btn {
+          color: $blanco;
+          background-color: $verde;
+          width: 100px;
+          margin-top: 20px;
+
+          &:hover {
+            background-color: $verdeOscuro;
+          }
+        }
+      }
+    }
+    .aside-div {
+      display: flex;
+      justify-content: center;
+      height: auto;
+      .aside {
+        background-color: $verde;
+        margin-top: 135px;
+
+        width: auto;
+
+        border-radius: 7px;
+
+        @include desktop {
+          width: 350;
+          height: 400px;
+        }
+
+        div {
+          margin: 0;
+          padding: 20px;
+          width: 100%;
+          border-bottom: 1px solid $blanco;
+
+          &:last-of-type {
+            border: none;
+          }
+        }
+
+        .aside__header {
+          .aside-title {
+            color: $blanco;
+            font-size: 2rem;
+            text-shadow: 2px 2px 2px $verdeOscuro;
+
+            img {
+              width: 30px;
+            }
+          }
+        }
+
+        .aside-p {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+          color: $blanco;
+
+          @include desktop {
+            font-size: 1.5rem;
+          }
+
+          span {
+            display: block;
+            color: $blanco;
+            text-shadow: 2px 2px 2px $verdeOscuro;
+
+            @include desktop {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

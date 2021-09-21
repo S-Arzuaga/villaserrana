@@ -1,0 +1,10 @@
+@import "./base/mixins";
+@import "./base/variables";
+
+// layout
+// components
+@import "./layout/components/Navbar.css";
+
+//pages
+@import "./layout/pages/PerrosComida.scss";
+@import "./layout/pages/Home.scss";

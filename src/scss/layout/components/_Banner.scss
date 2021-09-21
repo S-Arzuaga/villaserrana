@@ -1,0 +1,87 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
+
+.Banner {
+  margin-top: -7px;
+  height: 300px;
+  width: auto;
+  background-image: url(../../../images/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding-left: 1rem;
+  padding-top: 3rem;
+
+  @include desktop {
+    height: 550px;
+    margin: 0;
+    background-position: 0% 0%;
+    padding-left: 6rem;
+    padding-top: 11rem;
+  }
+
+  .Banner__logo {
+    img {
+      height: 70px;
+
+      @include desktop {
+        height: 100px;
+      }
+    }
+  }
+
+  .Banner__text {
+    padding-top: 0rem;
+
+    h4 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $verdeOscuro;
+      margin: 0;
+    }
+
+    h2 {
+      color: $verde;
+      font-size: 4rem;
+      margin: 0;
+      font-family: "Style Script", cursive;
+      font-weight: bolder;
+      text-shadow: 5px 5px 5px #000;
+    }
+
+    p {
+      color: $blanco;
+      font-weight: bold;
+      margin-top: -10px;
+      text-shadow: 2px 2px 2px #000;
+    }
+
+    @include desktop {
+      p {
+        color: $blanco;
+        font-size: 1.5rem;
+        margin-top: -20px;
+        font-weight: bold;
+      }
+    }
+
+    @include desktop {
+      padding-top: 0rem;
+
+      h4 {
+        font-size: 3rem;
+        color: #6a8936;
+        margin: 0;
+      }
+
+      h2 {
+        color: $verde;
+        font-size: 7rem;
+        font-family: "Style Script", cursive;
+        font-weight: bolder;
+        text-shadow: 5px 5px 5px #000;
+      }
+    }
+  }
+}

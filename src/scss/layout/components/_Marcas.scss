@@ -1,0 +1,23 @@
+@import "../../base/variables";
+
+.Marcas {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+
+  background-color: #fff;
+  border-bottom: 1px solid $grisClaro;
+  padding-bottom: 20px;
+  .Marca {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    .Marca-img {
+      width: 100px;
+      height: auto;
+    }
+  }
+}

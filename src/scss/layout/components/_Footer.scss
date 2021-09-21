@@ -1,0 +1,82 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+  background-color: #fff;
+
+  .logo {
+    margin-bottom: 100px;
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer-logo {
+      margin-top: 10px;
+      margin-right: 10px;
+      height: 60px;
+      width: 60px;
+    }
+
+    .logo__text {
+      h4 {
+        font-size: 1.5rem;
+        color: $verdeOscuro;
+        margin: 0;
+      }
+      h2 {
+        color: $verde;
+        font-size: 3rem;
+        font-family: "Style Script", cursive;
+        font-weight: bolder;
+        text-shadow: 5px 5px 5px #fff;
+        margin: 0;
+      }
+    }
+  }
+
+  .contacto {
+    text-align: center;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5px;
+      width: 150px;
+
+      span {
+        display: none;
+      }
+
+      &:hover {
+        color: $blanco;
+        background-color: $verde;
+        border-radius: 5px;
+
+        .contacto-p {
+          color: $blanco;
+        }
+
+        span {
+          display: inline;
+        }
+      }
+
+      .contacto-p {
+        width: 150px;
+        color: $verde;
+        font-size: 1.5rem;
+        margin: 5px 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

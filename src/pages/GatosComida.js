@@ -1,0 +1,27 @@
+import React from "react";
+
+import Products from "../components/Products";
+import NavegacionProductos from "../components/NavegacionProductos";
+
+import "../scss/layout/pages/_PerrosComida.scss";
+import useLineasContext from "../components/useLineasContext";
+
+function PerrosComida(props) {
+  const lineas = useLineasContext();
+  const { comidaGatos } = lineas;
+  return (
+    <div className="PerrosComida">
+      <div className="">
+        <h1 className="PerrosComida__title">Comida de Gatos</h1>
+        <div className="main">
+          <NavegacionProductos lineas={comidaGatos} />
+          <div className="PerrosComida_products">
+            <Products lineas={comidaGatos} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default PerrosComida;

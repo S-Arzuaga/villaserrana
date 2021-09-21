@@ -1,0 +1,132 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+.Contacto {
+  height: 100%;
+  content: "";
+  background-color: #cccccc;
+  // background-image: url("../../../images/banner.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 100px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .Contacto_story {
+    width: 500px;
+    margin-top: 60px;
+    position: relative;
+    display: none;
+  }
+
+  .Contacto_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    color: #fff;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 50px;
+
+    .Contacto_card-title {
+      color: $verde;
+    }
+
+    .Contacto_card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      h4 {
+        font-size: 1.5rem;
+
+        a {
+          color: $verde;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .Contacto {
+    height: 100%;
+    content: "";
+    background-color: #cccccc;
+    background-image: url("../../../images/banner.jpg");
+    background-size: cover;
+    position: relative;
+    padding: 100px;
+    width: 100%;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .Contacto_story {
+      width: 500px;
+      margin-top: 60px;
+      position: relative;
+      display: block;
+    }
+
+    .Contacto_card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+      color: #fff;
+
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      padding: 50px;
+
+      .Contacto_card-title {
+        color: $verde;
+      }
+
+      .Contacto_card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        h4 {
+          font-size: 2rem;
+
+          a {
+            color: $verde;
+          }
+        }
+      }
+    }
+  }
+}

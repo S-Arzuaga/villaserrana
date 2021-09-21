@@ -1,0 +1,9 @@
+.AdminProducts__container {
+  display: flex;
+  flex-direction: column;
+  .admin_products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
