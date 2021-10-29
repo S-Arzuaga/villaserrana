@@ -100,7 +100,7 @@ function App(props) {
       <Navbar />
 
       <Switch>
-        <Route exact path="/villaserrana" component={Home} />
+        <Route exact path="/" component={Home} />
         <LineasContext.Provider value={lineas}>
           <Route exact path="/PerrosComida" component={PerrosComida} />
           <Route exact path="/PerrosProductos" component={PerrosProductos} />
