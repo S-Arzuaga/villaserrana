@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import * as CompaniesServer from "./CompaniesServer";
-import useLineasContext from "./useLineasContext";
+
+import useGetLines from "../hooks/useGetLines";
+
+const API_LINES = "http://localhost:4000/api/v1/lines";
+const API_PRODUCTS = "http://localhost:4000/api/v1/products";
 
 function ProductForm(props) {
   const history = useHistory();
@@ -12,7 +16,7 @@ function ProductForm(props) {
   const initialState = {
     id: 0,
     nombre: "",
-    linea: "",
+    lineId: 0,
     size: "",
     precio: 1950,
     imagen: "",
@@ -35,7 +39,7 @@ function ProductForm(props) {
       e.preventDefault();
       let res;
       if (!params.id) {
-        res = await CompaniesServer.registerCompany(product);
+        res = await CompaniesServer.registerProduct(product);
         const data = await res.json();
         if (data.message === "success") {
           setProduct(initialState);
@@ -54,8 +58,14 @@ function ProductForm(props) {
       const res = await CompaniesServer.getProduct(productId);
       const data = await res.json();
       console.log(data);
-      const { nombre, imagen, linea, size, precio } = data.companies;
-      setProduct({ nombre, imagen, linea, size, precio });
+      const { name, image, lineId, size, price } = data;
+      setProduct({
+        nombre: name,
+        imagen: image,
+        lineId: lineId,
+        size,
+        precio: price,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -67,8 +77,12 @@ function ProductForm(props) {
     }
   }, []);
 
-  const lineas = useLineasContext();
-  const { comidaPerros, comidaGatos, productosPerros, productosGatos } = lineas;
+  const res = useGetLines(API_LINES);
+  const comidaPerros = res.filter((line) => line.categoryId == 1);
+  const comidaGatos = res.filter((line) => line.categoryId == 3);
+  const productosPerros = res.filter((line) => line.categoryId == 2);
+  const productosGatos = res.filter((line) => line.categoryId == 4);
+
   return (
     <div className="mt-4">
       <h1 className="text-center">Crear un nuevo Producto</h1>
@@ -89,17 +103,6 @@ function ProductForm(props) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="linea">linea</label>
-          <input
-            type="text"
-            name="linea"
-            value={product.linea}
-            onChange={handleInputChange}
-            placeholder="linea"
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
           <label htmlFor="size">Tamaño</label>
           <input
             type="text"
@@ -111,7 +114,7 @@ function ProductForm(props) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="precio">precio</label>
+          <label htmlFor="precio">Precio</label>
           <input
             type="text"
             name="precio"
@@ -129,6 +132,18 @@ function ProductForm(props) {
             value={product.imagen}
             onChange={handleInputChange}
             placeholder="imagen"
+            className="form-control"
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="lineaId">LineId</label>
+          <input
+            type="number"
+            name="lineId"
+            value={product.lineId}
+            onChange={handleInputChange}
+            placeholder="lineaId"
             className="form-control"
           />
         </div>
@@ -150,7 +165,10 @@ function ProductForm(props) {
           <div>
             <ul>
               {comidaPerros.map((linea) => (
-                <li className="list-group-item">{linea}</li>
+                <li className="list-group-item d-flex gap-4">
+                  <div>id: {linea.id}</div>
+                  <div className="fw-bold">{linea.name}</div>
+                </li>
               ))}
             </ul>
           </div>
@@ -161,7 +179,10 @@ function ProductForm(props) {
           <div>
             <ul>
               {comidaGatos.map((linea) => (
-                <li className="list-group-item">{linea}</li>
+                <li className="list-group-item d-flex gap-4">
+                  <div>id: {linea.id}</div>
+                  <div className="fw-bold">{linea.name}</div>
+                </li>
               ))}
             </ul>
           </div>
@@ -171,7 +192,10 @@ function ProductForm(props) {
           <div>
             <ul>
               {productosPerros.map((linea) => (
-                <li className="list-group-item">{linea}</li>
+                <li className="list-group-item d-flex gap-4">
+                  <div>id: {linea.id}</div>
+                  <div className="fw-bold">{linea.name}</div>
+                </li>
               ))}
             </ul>
           </div>
@@ -181,7 +205,10 @@ function ProductForm(props) {
           <div>
             <ul>
               {productosGatos.map((linea) => (
-                <li className="list-group-item">{linea}</li>
+                <li className="list-group-item d-flex gap-4">
+                  <div>id: {linea.id}</div>
+                  <div className="fw-bold">{linea.name}</div>
+                </li>
               ))}
             </ul>
           </div>

@@ -1,22 +1,31 @@
 import React from "react";
 
+//COMPONENTS
 import Products from "../components/Products";
 import NavegacionProductos from "../components/NavegacionProductos";
 
+// CSS
 import "../scss/layout/pages/_PerrosComida.scss";
-import useLineasContext from "../components/useLineasContext";
 
-function PerrosComida(props) {
-  const lineas = useLineasContext();
-  const { comidaGatos } = lineas;
+// HOOKS
+import useGetLines from "../hooks/useGetLines";
+
+// API URL
+const API_LINES = "http://localhost:4000/api/v1/lines";
+
+function GatosComida(props) {
+  const res = useGetLines(API_LINES);
+  const lines = res.filter((line) => line.categoryId == 3);
+  console.log(lines);
+
   return (
     <div className="PerrosComida">
       <div className="">
         <h1 className="PerrosComida__title">Comida de Gatos</h1>
         <div className="main">
-          <NavegacionProductos lineas={comidaGatos} />
+          <NavegacionProductos lineas={lines} />
           <div className="PerrosComida_products">
-            <Products lineas={comidaGatos} />
+            <Products lineas={lines} />
           </div>
         </div>
       </div>
@@ -24,4 +33,4 @@ function PerrosComida(props) {
   );
 }
 
-export default PerrosComida;
+export default GatosComida;

@@ -4,25 +4,14 @@ import { Link } from "react-router-dom";
 import Product from "../components/Product";
 import Header from "../components/Header";
 import * as CompaniesServer from "../components/CompaniesServer";
+import useGetProducts from "../hooks/useGetProducts";
 
 import "../scss/layout/pages/_Home.scss";
 
+const API = "http://localhost:4000/api/v1/products";
+
 function Home(props) {
-  const [products, setProducts] = useState([]);
-
-  const listCompanies = async () => {
-    try {
-      const res = await CompaniesServer.listCompanies();
-      const data = await res.json();
-      setProducts(data.companies);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    listCompanies();
-  }, []);
+  const products = useGetProducts(API);
 
   return (
     <div>
@@ -37,7 +26,7 @@ function Home(props) {
                 <div className="products">
                   <div className="home_product">
                     {products
-                      .filter((product) => product.id === 90)
+                      .filter((product) => product.id === 2)
                       .map((filteredProduct) => (
                         <div>
                           <Product product={filteredProduct} />

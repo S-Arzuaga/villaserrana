@@ -4,19 +4,22 @@ import Products from "../components/Products";
 import NavegacionProductos from "../components/NavegacionProductos";
 
 import "../scss/layout/pages/_PerrosComida.scss";
-import useLineasContext from "../components/useLineasContext";
+
+import useGetLines from "../hooks/useGetLines";
+
+const API_LINES = "http://localhost:4000/api/v1/lines";
 
 function PerrosProductos(props) {
-  const lineas = useLineasContext();
-  const { productosGatos } = lineas;
+  const res = useGetLines(API_LINES);
+  const lines = res.filter((line) => line.categoryId == 1);
   return (
     <div className="PerrosComida">
       <div className="">
         <h1 className="PerrosComida__title">Comida de Perros</h1>
         <div className="main">
-          <NavegacionProductos lineas={productosGatos} />
+          <NavegacionProductos lineas={lines} />
           <div className="PerrosComida_products">
-            <Products lineas={productosGatos} />
+            <Products lineas={lines} />
           </div>
         </div>
       </div>

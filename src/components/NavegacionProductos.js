@@ -33,8 +33,8 @@ function NavegacionProductos(props) {
       </button>
       <ul id="NavegacionProductos-lista" className="NavegacionProductos_lista">
         {lineas.map((linea) => (
-          <a href={`#${linea}`} className="NavegacionProductos_lista-a">
-            <li className="lista_li">{linea}</li>
+          <a href={`#${linea.name}`} className="NavegacionProductos_lista-a">
+            <li className="lista_li">{linea.name}</li>
           </a>
         ))}
       </ul>

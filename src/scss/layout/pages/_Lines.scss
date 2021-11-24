@@ -1,0 +1,73 @@
+.Lines {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 50px;
+  .row-1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 100px;
+    margin-bottom: 50px;
+
+    .categoria {
+      width: 250px;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 5px;
+      .id-place {
+        width: 10px;
+      }
+
+      .categoryId {
+        width: 10px;
+      }
+
+      .categoryName {
+        width: 200px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .row-2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .line {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 5px;
+
+      .lineId {
+        width: 30px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .lineName {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    margin-bottom: 15px;
+
+    label {
+      width: 100px;
+    }
+    input {
+      width: 200px;
+    }
+  }
+}

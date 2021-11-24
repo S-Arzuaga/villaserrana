@@ -1,16 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// COMPONENTS
 import NavegacionProductos from "../components/NavegacionProductos";
 import AdminProducts from "./AdminProducts";
 
+// HOOKS
+import useGetLines from "../hooks/useGetLines";
+
+// CSS
 import "../scss/layout/pages/_PerrosComida.scss";
 import "../scss/layout/components/_ListProducts.scss";
-import useLineasContext from "../components/useLineasContext";
+
+// API URL
+const API_LINES = "http://localhost:4000/api/v1/lines";
 
 function ListProducts(props) {
-  const lineas = useLineasContext();
-  const { comidaPerros, comidaGatos, productosPerros, productosGatos } = lineas;
+  const res = useGetLines(API_LINES);
+  const comidaPerros = res.filter((line) => line.categoryId == 1);
+  const comidaGatos = res.filter((line) => line.categoryId == 3);
+  const productosPerros = res.filter((line) => line.categoryId == 2);
+  const productosGatos = res.filter((line) => line.categoryId == 4);
 
   const handleClick = (e) => {
     const button = e.target;
@@ -42,7 +52,10 @@ function ListProducts(props) {
               <div className="ListProducts_perros-div">
                 <NavegacionProductos lineas={comidaPerros} />
                 <div className="ListProducts_products">
-                  <AdminProducts lineas={comidaPerros} />
+                  <AdminProducts
+                    lineas={comidaPerros}
+                    category={"Comida de Perros"}
+                  />
                 </div>
               </div>
             </div>

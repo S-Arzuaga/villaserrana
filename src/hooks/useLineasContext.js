@@ -1,4 +1,4 @@
 import { useContext } from "react";
-import LineasContext from "./LineasContext";
+import LineasContext from "../components/LineasContext";
 
 export default () => useContext(LineasContext);

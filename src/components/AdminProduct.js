@@ -1,26 +1,43 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import useDeleteProducts from "../hooks/useDeleteProduct";
 
 import "../scss/layout/components/_AdminProduct.scss";
+
+const API = "http://localhost:4000/api/v1/products";
 
 function AdminProduct(props) {
   const history = useHistory();
   const product = props.product;
+  // const handleDelete = props.handleDelete;
+
+  // const useDeleteProducts2 = useDeleteProducts();
+
+  const handleDelete = function (id) {
+    fetch(`${API}/${id}`, {
+      method: "DELETE",
+    }).then((response) =>
+      response.json().then((res) => {
+        console.log(res);
+      })
+    );
+    window.location.reload(true);
+  };
 
   return (
     <div className="AdminProduct">
-      <img src={product.imagen} alt="imagen del producto" />
+      <img src={product.image} alt="imagen del producto" />
       <div className="product_info">
-        <h4>{product.nombre}</h4>
+        <h4>{product.name}</h4>
         <div>
           <p>
-            <strong> Linea:</strong> {product.linea}
+            <strong> Linea:</strong> {product.line.name}
           </p>
           <p>
             <strong>Tamaño:</strong> {product.size}
           </p>
           <p>
-            <strong>Precio:</strong> {product.precio}
+            <strong>Precio:</strong> {product.price}
           </p>
           <p>
             <strong>Id:</strong> {product.id}
@@ -35,7 +52,7 @@ function AdminProduct(props) {
           Editar
         </button>
         <button
-          onClick={() => product.id && props.handleDelete(product.id)}
+          onClick={() => handleDelete(product.id)}
           className="btn btn-danger"
         >
           Eliminar

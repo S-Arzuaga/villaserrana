@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+// Components
 import Home from "../pages/Home";
 import PerrosComida from "../pages/PerrosComida";
 import Footer from "./Footer";
@@ -10,98 +11,21 @@ import GatosComida from "../pages/GatosComida";
 import PerrosProductos from "../pages/PerrosProductos";
 import GatosProductos from "../pages/GatosProductos";
 import Contacto from "../pages/Contacto";
-
-import LineasContext from "./LineasContext";
+import Lines from "../pages/Lines";
 import Navbar from "./Navbar";
 
-function App(props) {
-  const lineas = {
-    comidaPerros: [
-      "Frost Perros",
-      "Astro Perros",
-      "Nhock",
-      "Tiernitos Perros",
-      "Dog Selection",
-      "Protemix Perros",
-      "Equilibrio Perros",
-      "Max Perro",
-      "Pro Plan Perros",
-      "Dog Chow",
-      "Dogui",
-      "Excellent Perros",
-      "Pedigree",
-      "Eukanuba",
-      "Iams Perros",
-      "Big Boss",
-      "The Golden Choice",
-      "Natural Dog",
-      "Keller",
-      "Rusty",
-      "Primocao",
-      "Lager Perro",
-      "Connie",
-      "Wits Perros",
-      "Toky",
-      "Hills Perro",
-      "Royal Cannin Perro",
-      "Vicbac Perro",
-      "Biofresh Perro",
-      "ThreeDog",
-    ],
-    comidaGatos: [
-      "Frost Gatos",
-      "Astro Gato",
-      "Jazz",
-      "Tiernitos Gato",
-      "Protemix Gato",
-      "Equilibrio Gatos",
-      "Pro Plan Cat",
-      "Cat Chow",
-      "Gati",
-      "Excellent Gato",
-      "Whiskas",
-      "Iams Gato",
-      "Pelusa",
-      "Primogato",
-      "Lager Gatos",
-      "Wits Gato",
-      "Hills Gato",
-      "Royal Cannin Gato",
-      "Pachá Gato",
-      "Vicbac Gato",
-      "Biofresh Gato",
-      "ThreeCat",
-    ],
-    productosPerros: [
-      "Cunas",
-      "Casitas",
-      "Juguetes de Perros",
-      "Snacks",
-      "Alimento húmedo Perro",
-      "Antipulgas Perros",
-      "Shampoo de Perro",
-      "Otros Productos",
-    ],
-    productosGatos: [
-      "Cunas",
-      "Casitas",
-      "Juguetes de Gatos",
-      "Snacks",
-      "Alimento húmedo Gato",
-      "Arenas Sanitarias",
-      "Antipulgas Gatos",
-      "Shampoo de Gatos",
-      "Otros Productos",
-    ],
-  };
+// Context
 
+import LineState from "../context/lines/LineState";
+
+function App(props) {
   return (
     <BrowserRouter>
       <Navbar />
 
       <Switch>
-        <Route exact path="/" component={Home} />
-        <LineasContext.Provider value={lineas}>
+        <Route exact path="/villaserrana" component={Home} />
+        <LineState>
           <Route exact path="/PerrosComida" component={PerrosComida} />
           <Route exact path="/PerrosProductos" component={PerrosProductos} />
 
@@ -109,11 +33,12 @@ function App(props) {
           <Route exact path="/GatosProductos" component={GatosProductos} />
 
           <Route exact path="/ProductForm" component={ProductForm} />
-          <Route exact path="/ListProducts" component={ListProducts} />
+          <Route exact path="/ProductosAdmin" component={ListProducts} />
           <Route exact path="/UpdateProduct/:id" component={ProductForm} />
+          <Route exact path="/Lineas" component={Lines} />
 
           <Route exact path="/Contacto" component={Contacto} />
-        </LineasContext.Provider>
+        </LineState>
       </Switch>
 
       <Footer />
