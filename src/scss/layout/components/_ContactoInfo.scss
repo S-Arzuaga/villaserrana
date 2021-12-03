@@ -4,8 +4,9 @@
   height: 100%;
   content: "";
   background-color: #cccccc;
-  // background-image: url("../../../images/banner.jpg");
+  background-image: url("../../../images/banner.jpg");
   background-size: cover;
+  background-position: center center;
   position: relative;
   padding: 100px;
   width: 100%;
@@ -72,6 +73,7 @@
     background-color: #cccccc;
     background-image: url("../../../images/banner.jpg");
     background-size: cover;
+    background-position: center center;
     position: relative;
     padding: 100px;
     width: 100%;

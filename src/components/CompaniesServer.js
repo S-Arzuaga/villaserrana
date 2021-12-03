@@ -1,5 +1,6 @@
-const PRODUCTS_URL = "http://localhost:4000/api/v1/products";
-const CATEGORIES_URL = "http://localhost:4000/api/v1/categories";
+const PRODUCTS_URL = "https://aqueous-cove-93793.herokuapp.com/api/v1/products";
+const CATEGORIES_URL =
+  "https://aqueous-cove-93793.herokuapp.com/api/v1/categories";
 
 export const listProducts = async () => {
   return await fetch(PRODUCTS_URL);

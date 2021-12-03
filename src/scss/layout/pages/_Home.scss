@@ -8,8 +8,128 @@
 
     margin: 0 auto;
 
-    .seccion {
+    h1 {
+      text-align: center;
+    }
+
+    .seccion__container {
       margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      @include desktop {
+        margin-top: 135px;
+      }
+
+      .seccion__container-div {
+        margin-bottom: 20px;
+        @include desktop {
+          margin: none;
+        }
+        a {
+          width: 100%;
+
+          .fondo {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: $verde;
+
+            border-radius: 5px;
+            position: relative;
+
+            height: 300px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include desktop {
+              width: 800px;
+              height: 300px;
+            }
+
+            div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+
+              h3 {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                font-size: 2rem;
+
+                color: $blanco;
+
+                @include desktop {
+                  font-size: 3rem;
+                }
+              }
+
+              p {
+                display: none;
+                color: $verde;
+                position: relative;
+                margin-top: 50px;
+                font-size: 1rem;
+
+                @include desktop {
+                  font-size: 2rem;
+                }
+              }
+            }
+
+            &:hover {
+              transform: scale(1.07);
+              transition: all 0.5s;
+
+              h3 {
+                font-size: 2rem;
+
+                @include desktop {
+                  font-size: 3.1rem;
+                }
+              }
+
+              p {
+                display: block;
+              }
+            }
+          }
+          .fondo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+          }
+
+          .comidadeperro {
+            background-image: url("../../../images/secciones/comidadeperros.jpg");
+          }
+
+          .productodeperro {
+            background-image: url("../../../images/secciones/productosdeperros.jpg");
+          }
+
+          .comidadegato {
+            background-image: url("../../../images/secciones/comidadegatos.jpg");
+          }
+
+          .productodegato {
+            background-image: url("../../../images/secciones/productosdegatos.jpg");
+          }
+        }
+      }
     }
 
     @include desktop {
@@ -18,55 +138,6 @@
       gap: 3rem;
     }
 
-    .Home__title {
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: center;
-      margin: 50px 0;
-    }
-
-    .Home__seccion {
-      border-bottom: 1px solid $grisClaro;
-      padding-bottom: 20px;
-
-      .products {
-        display: grid;
-        grid-template-columns: 1fr;
-        row-gap: 20px;
-
-        @include desktop {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          column-gap: 20px;
-        }
-
-        .home_product {
-          display: flex;
-          justify-content: center;
-        }
-      }
-
-      .vermas_button {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        padding: 0 40px;
-
-        @include desktop {
-          padding: 0;
-        }
-        .vermas-btn {
-          color: $blanco;
-          background-color: $verde;
-          width: 100px;
-          margin-top: 20px;
-
-          &:hover {
-            background-color: $verdeOscuro;
-          }
-        }
-      }
-    }
     .aside-div {
       display: flex;
       justify-content: center;
@@ -116,6 +187,10 @@
             font-size: 1.5rem;
           }
 
+          a {
+            color: $blanco;
+            text-decoration: underline;
+          }
           span {
             display: block;
             color: $blanco;

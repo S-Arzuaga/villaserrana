@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import * as CompaniesServer from "./CompaniesServer";
 
 import useGetLines from "../hooks/useGetLines";
 
-const API_LINES = "http://localhost:4000/api/v1/lines";
+import "../scss/layout/pages/_ProductForm.scss";
+
+const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
+
 const API_PRODUCTS = "http://localhost:4000/api/v1/products";
 
 function ProductForm(props) {
@@ -47,7 +50,7 @@ function ProductForm(props) {
       } else {
         await CompaniesServer.updateProduct(params.id, product);
       }
-      history.push("/ListProducts");
+      history.push("/ProductosAdmin");
     } catch (error) {
       console.log(error);
     }
@@ -85,7 +88,12 @@ function ProductForm(props) {
 
   return (
     <div className="mt-4">
-      <h1 className="text-center">Crear un nuevo Producto</h1>
+      <div className="form_header">
+        <Link to="/ProductosAdmin" className="btn btn-primary">
+          Volver
+        </Link>
+        <h1 className="text-center">Crear un nuevo Producto</h1>
+      </div>
       <form
         action=""
         onSubmit={handleSubmit}

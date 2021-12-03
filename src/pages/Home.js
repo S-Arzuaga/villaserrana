@@ -20,164 +20,46 @@ function Home(props) {
       <div className="Home">
         <div className="container">
           <div className="seccion__container">
-            <div className="seccion">
-              <h3 className="Home__title">Comida de Perro</h3>
-              <div className="Home__seccion">
-                <div className="products">
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 2)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 136)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 144)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
+            <h1>Nuestras categorías</h1>
+            <div className="seccion__container-div">
+              <a href="/PerrosComida">
+                <div className="fondo comidadeperro">
+                  <div>
+                    <h3>Comida de Perros</h3>
+                    <p>Ver Mas</p>
                   </div>
                 </div>
-                <div className="vermas_button">
-                  <Link to="/PerrosComida" className="btn vermas-btn">
-                    Ver Mas
-                  </Link>
-                </div>
-              </div>
+              </a>
             </div>
-            <div className="seccion">
-              <h3 className="Home__title">Productos de Perros</h3>
-              <div className="Home__seccion">
-                <div className="products">
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 147)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 148)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 149)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
+            <div className="seccion__container-div">
+              <a href="/PerrosProductos">
+                <div className="fondo productodeperro">
+                  <div>
+                    <h3>Productos de Perros</h3>
+                    <p>Ver Mas</p>
                   </div>
                 </div>
-                <div className="vermas_button">
-                  <Link to="/PerrosProductos" className="btn vermas-btn">
-                    Ver Mas
-                  </Link>
-                </div>
-              </div>
-              <div className="Home__accesorios-perro"></div>
+              </a>
             </div>
-            <div className="seccion">
-              <h3 className="Home__title">Comida de Gato</h3>
-              <div className="Home__seccion">
-                <div className="products">
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 98)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 103)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 150)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
+            <div className="seccion__container-div">
+              <a href="/GatosComida">
+                <div className="fondo comidadegato">
+                  <div>
+                    <h3>Comida de Gatos</h3>
+                    <p>Ver Mas</p>
                   </div>
                 </div>
-                <div className="vermas_button">
-                  <Link to="/GatosComida" className="btn vermas-btn">
-                    Ver Mas
-                  </Link>
-                </div>
-              </div>
-              <div className="Home__accesorios-gato"></div>
+              </a>
             </div>
-            <div className="seccion">
-              <h3 className="Home__title">Productos de Gatos</h3>
-              <div className="Home__seccion">
-                <div className="products">
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 151)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 152)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
-                  </div>
-                  <div className="home_product">
-                    {products
-                      .filter((product) => product.id === 153)
-                      .map((filteredProduct) => (
-                        <div>
-                          <Product product={filteredProduct} />
-                        </div>
-                      ))}
+            <div className="seccion__container-div">
+              <a href="/GatosProductos">
+                <div className="fondo productodegato">
+                  <div>
+                    <h3>Productos de Gatos</h3>
+                    <p>Ver Mas</p>
                   </div>
                 </div>
-                <div className="vermas_button">
-                  <Link to="/GatosProductos" className="btn vermas-btn">
-                    Ver Mas
-                  </Link>
-                </div>
-              </div>
-              <div className="Home__accesorios-gato"></div>
+              </a>
             </div>
           </div>
           <div className="aside-div">
@@ -191,20 +73,27 @@ function Home(props) {
               </div>
               <div className="aside__body">
                 <p className="aside-p">
-                  <span>E-mail: </span> corre@correo.com
+                  <span>E-mail: </span> Petshopvillaserrana@gmail.com
                 </p>
                 <p className="aside-p">
                   <span>WhatsApp: </span>
-                  <a href="https://wa.me/59897473704"> Contactar</a>{" "}
+                  <a href="https://wa.me/59897663634"> Contactar</a>{" "}
                 </p>
                 <p className="aside-p">
-                  <span>Telefono: </span> 093304445
+                  <span>Telefono: </span> 097 663 634
                 </p>
                 <p className="aside-p">
-                  <span>Facebook: </span> Pet Shop Villa Serrana{" "}
+                  <span>Instagram: </span>{" "}
+                  <a
+                    href="https://www.instagram.com/petshopvillaserrana_uy/?hl=es"
+                    target="_blank"
+                  >
+                    {" "}
+                    @petshopvillaserrana_uy
+                  </a>
                 </p>
                 <p className="aside-p">
-                  <span>Instagram: </span> @petshopvillaserrana{" "}
+                  <span>También en: </span> Mercado Libre{" "}
                 </p>
               </div>
             </aside>

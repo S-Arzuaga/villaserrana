@@ -1,10 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import useDeleteProducts from "../hooks/useDeleteProduct";
 
 import "../scss/layout/components/_AdminProduct.scss";
 
-const API = "http://localhost:4000/api/v1/products";
+const API_PRODUCTS = "https://aqueous-cove-93793.herokuapp.com/api/v1/products";
 
 function AdminProduct(props) {
   const history = useHistory();
@@ -14,14 +13,13 @@ function AdminProduct(props) {
   // const useDeleteProducts2 = useDeleteProducts();
 
   const handleDelete = function (id) {
-    fetch(`${API}/${id}`, {
+    fetch(`${API_PRODUCTS}/${id}`, {
       method: "DELETE",
     }).then((response) =>
       response.json().then((res) => {
         console.log(res);
       })
     );
-    window.location.reload(true);
   };
 
   return (

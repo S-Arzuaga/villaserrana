@@ -7,7 +7,7 @@ import logodefinitivoweb from "../images/logodefinitivoweb.svg";
 function Logo(props) {
   return (
     <div className="logo">
-      <Link to="/villaserrana">
+      <Link to="/">
         <img className="navbar-logo mr-2" src={logodefinitivoweb} alt="" />
         <div className="logo__text">
           <h4>Pet Shop</h4>

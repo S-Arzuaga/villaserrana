@@ -7,7 +7,7 @@ import "../scss/layout/pages/_PerrosComida.scss";
 
 import useGetLines from "../hooks/useGetLines";
 
-const API_LINES = "http://localhost:4000/api/v1/lines";
+const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
 
 function PerrosProductos(props) {
   const res = useGetLines(API_LINES);
@@ -16,7 +16,7 @@ function PerrosProductos(props) {
   return (
     <div className="PerrosComida">
       <div className="">
-        <h1 className="PerrosComida__title">Comida de Perros</h1>
+        <h1 className="PerrosComida__title">Productos de Perros</h1>
         <div className="main">
           <NavegacionProductos lineas={lines} />
           <div className="PerrosComida_products">

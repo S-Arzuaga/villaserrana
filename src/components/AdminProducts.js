@@ -4,23 +4,16 @@ import * as CompaniesServer from "./CompaniesServer";
 
 import AdminProduct from "./AdminProduct";
 import useGetProducts from "../hooks/useGetProducts";
-import useDeleteProducts from "../hooks/useDeleteProduct";
 
 import "../scss/layout/components/_AdminProducts.scss";
 
-const API = "http://localhost:4000/api/v1/products";
+const API_PRODUCTS = "https://aqueous-cove-93793.herokuapp.com/api/v1/products";
 
 function Products(props) {
-  const getProducts = useGetProducts(API);
+  const getProducts = useGetProducts(API_PRODUCTS);
   console.log(getProducts);
 
-  useGetProducts(API);
-
   const lineas = props.lineas;
-
-  // const handleDelete = async (productId) => {
-  //   await CompaniesServer.deleteProduct(productId);
-  // };
 
   return (
     <div className="AdminProducts">
@@ -35,10 +28,7 @@ function Products(props) {
                 )
                 .map((filteredProduct2) => (
                   <div className="admin_product">
-                    <AdminProduct
-                      product={filteredProduct2}
-                      handleDelete={useDeleteProducts}
-                    />
+                    <AdminProduct product={filteredProduct2} />
                   </div>
                 ))}
             </div>

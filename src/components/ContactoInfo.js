@@ -13,11 +13,11 @@ function ContactoInfo(props) {
         <h1 className="Contacto_card-title">¡Contáctanos!</h1>
         <div className="Contacto_card-info">
           <h4>
-            Telefono: <a>093304445</a>
+            Telefono: <a>097 663 634</a>
           </h4>
           <h4>
             WhatsApp: &raquo;{" "}
-            <a href="https://wa.me/59897473704" target="_blank">
+            <a href="https://wa.me/59897663634" target="_blank">
               Abrir Chat
             </a>{" "}
             &laquo;
@@ -25,22 +25,22 @@ function ContactoInfo(props) {
           <h4>
             Instagram:{" "}
             <a
-              href="https://www.instagram.com/petshopvillaserrana/?hl=es"
+              href="https://www.instagram.com/petshopvillaserrana_uy/?hl=es"
               target="_blank"
             >
-              @petshopvillaserrana
-            </a>
-          </h4>
-          <h4>
-            Facebook:{" "}
-            <a href="" target="_blank">
-              @petshopvillaserrana
+              @petshopvillaserrana_uy
             </a>
           </h4>
           <h4>
             Correo:{" "}
             <a href="" target="_blank">
-              correo@correo.com
+              Petshopvillaserrana@gmail.com
+            </a>
+          </h4>
+          <h4>
+            También estamos en:{" "}
+            <a href="" target="_blank">
+              Mercado Libre
             </a>
           </h4>
         </div>

@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import "../scss/layout/components/_Navbar.scss";
 import Logo from "./Logo";
 
-import logodefinitivoweb from "../images/logodefinitivoweb.svg";
-
 function Navbar() {
   return (
     <div className="Navbar">

@@ -6,10 +6,10 @@ import "../scss/layout/components/_Products.scss";
 
 import useGetProducts from "../hooks/useGetProducts";
 
-const API = "http://localhost:4000/api/v1/products";
+const API_PRODUCTS = "https://aqueous-cove-93793.herokuapp.com/api/v1/products";
 
 function Products(props) {
-  const products = useGetProducts(API);
+  const products = useGetProducts(API_PRODUCTS);
 
   const lineas = props.lineas;
 

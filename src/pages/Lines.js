@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import useGetLines from "../hooks/useGetLines";
 import useGetCategories from "../hooks/useGetCategories";
 
 import "../scss/layout/pages/_Lines.scss";
 
-const API_LINES = "http://localhost:4000/api/v1/lines";
-const API_CATEGORIES = "http://localhost:4000/api/v1/categories";
+const API_LINES2 = "http://localhost:4000/api/v1/lines";
+const API_CATEGORIES2 = "http://localhost:4000/api/v1/categories";
+
+const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
+const API_CATEGORIES =
+  "https://aqueous-cove-93793.herokuapp.com/api/v1/categories";
 
 function Lines(props) {
   const initialState = {
@@ -14,6 +19,7 @@ function Lines(props) {
   };
 
   const [line, setLine] = useState(initialState);
+  console.log(line);
 
   const lines = useGetLines(API_LINES);
   console.log(lines);
@@ -22,8 +28,8 @@ function Lines(props) {
   console.log(categories);
 
   const handleInputChange = (e) => {
-    // console.log(e.target.name);
-    // console.log(e.target.value);
+    console.log(e.target.name);
+    console.log(e.target.value);
 
     setLine({
       ...line,
@@ -31,34 +37,50 @@ function Lines(props) {
     });
   };
 
-  const handleSubmit = function () {
+  const dataLines = () => {
+    fetch(`${API_LINES}`)
+      .then((response) => response.json())
+      .then((data) =>
+        setLine({ name: data.name, categoryId: data.categoryId })
+      );
+  };
+
+  const handleSubmit = function (e) {
+    e.preventDefault();
     fetch(`${API_LINES}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: String(line.name).trim(),
-        categoryId: String(line.categoryId).trim(),
+        name: String(line.name),
+        categoryId: Number(line.categoryId),
       }),
     }).then((response) => {
-      response.json();
+      const res = response.json();
+      console.log(res);
     });
-    window.location.reload(true);
+    dataLines();
   };
 
   const handleDelete = function (id) {
     fetch(`${API_LINES}/${id}`, { method: "DELETE" });
-    window.location.reload(true);
+    // window.location.reload(true);
   };
 
   return (
     <div className="Lines">
       <div className="row-1">
+        <Link to="/ProductosAdmin" className="btn btn-primary">
+          Volver
+        </Link>
         <div className="categorias-conatiner">
           <h3>Categorias</h3>
           {categories.map((category) => (
-            <div className="categoria d-flex justify-content-between ">
+            <div
+              className="categoria d-flex justify-content-between "
+              key={category.id}
+            >
               <div className="id-place fw-bold">id:</div>
               <div className="categoryId">{category.id}</div>
               <div className="categoryName">{category.name}</div>
@@ -90,7 +112,7 @@ function Lines(props) {
           {lines
             .filter((line) => line.categoryId === 1)
             .map((line) => (
-              <div className="line">
+              <div className="line" key={line.id}>
                 <div className="lineId">
                   <div className="fw-bold">id:</div>
                   <div>{line.id}</div>

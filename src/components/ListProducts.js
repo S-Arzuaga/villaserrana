@@ -13,7 +13,7 @@ import "../scss/layout/pages/_PerrosComida.scss";
 import "../scss/layout/components/_ListProducts.scss";
 
 // API URL
-const API_LINES = "http://localhost:4000/api/v1/lines";
+const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
 
 function ListProducts(props) {
   const res = useGetLines(API_LINES);
@@ -40,7 +40,10 @@ function ListProducts(props) {
             to="/ProductForm"
             className="btn btn-primary h-25 d-flex align-items-center"
           >
-            Crear
+            Crear Producto
+          </Link>
+          <Link to="/Lineas" className="btn btn-primary">
+            Crear Linea
           </Link>
         </div>
         <div className="">
