@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/villaserrana/static/css/main.0db24502.chunk.css",
-    "main.js": "/villaserrana/static/js/main.985e7ddf.chunk.js",
-    "main.js.map": "/villaserrana/static/js/main.985e7ddf.chunk.js.map",
-    "runtime-main.js": "/villaserrana/static/js/runtime-main.b845ab1a.js",
-    "runtime-main.js.map": "/villaserrana/static/js/runtime-main.b845ab1a.js.map",
+    "main.css": "/villaserrana/static/css/main.1ac55ca7.chunk.css",
+    "main.js": "/villaserrana/static/js/main.51904205.chunk.js",
+    "main.js.map": "/villaserrana/static/js/main.51904205.chunk.js.map",
+    "runtime-main.js": "/villaserrana/static/js/runtime-main.d526b361.js",
+    "runtime-main.js.map": "/villaserrana/static/js/runtime-main.d526b361.js.map",
     "static/css/2.983f79de.chunk.css": "/villaserrana/static/css/2.983f79de.chunk.css",
-    "static/js/2.f15b81c8.chunk.js": "/villaserrana/static/js/2.f15b81c8.chunk.js",
-    "static/js/2.f15b81c8.chunk.js.map": "/villaserrana/static/js/2.f15b81c8.chunk.js.map",
+    "static/js/2.8a6f0ff2.chunk.js": "/villaserrana/static/js/2.8a6f0ff2.chunk.js",
+    "static/js/2.8a6f0ff2.chunk.js.map": "/villaserrana/static/js/2.8a6f0ff2.chunk.js.map",
     "index.html": "/villaserrana/index.html",
     "static/css/2.983f79de.chunk.css.map": "/villaserrana/static/css/2.983f79de.chunk.css.map",
-    "static/css/main.0db24502.chunk.css.map": "/villaserrana/static/css/main.0db24502.chunk.css.map",
-    "static/js/2.f15b81c8.chunk.js.LICENSE.txt": "/villaserrana/static/js/2.f15b81c8.chunk.js.LICENSE.txt",
+    "static/css/main.1ac55ca7.chunk.css.map": "/villaserrana/static/css/main.1ac55ca7.chunk.css.map",
+    "static/js/2.8a6f0ff2.chunk.js.LICENSE.txt": "/villaserrana/static/js/2.8a6f0ff2.chunk.js.LICENSE.txt",
     "static/media/_ContactoInfo.scss": "/villaserrana/static/media/banner.8d7c4a13.jpg",
     "static/media/bigboss.fa195f86.jpeg": "/villaserrana/static/media/bigboss.fa195f86.jpeg",
     "static/media/catchow.86d04d33.jpeg": "/villaserrana/static/media/catchow.86d04d33.jpeg",
@@ -47,10 +47,10 @@
     "static/media/whiskas.7d3de5a8.jpeg": "/villaserrana/static/media/whiskas.7d3de5a8.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b845ab1a.js",
+    "static/js/runtime-main.d526b361.js",
     "static/css/2.983f79de.chunk.css",
-    "static/js/2.f15b81c8.chunk.js",
-    "static/css/main.0db24502.chunk.css",
-    "static/js/main.985e7ddf.chunk.js"
+    "static/js/2.8a6f0ff2.chunk.js",
+    "static/css/main.1ac55ca7.chunk.css",
+    "static/js/main.51904205.chunk.js"
   ]
 }
