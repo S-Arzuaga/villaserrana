@@ -8,7 +8,7 @@ import "../scss/layout/pages/_ProductForm.scss";
 
 const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
 
-const API_PRODUCTS = "http://localhost:4000/api/v1/products";
+// const API_PRODUCTS = "http://localhost:4000/api/v1/products";
 
 function ProductForm(props) {
   const history = useHistory();
@@ -81,10 +81,10 @@ function ProductForm(props) {
   }, []);
 
   const res = useGetLines(API_LINES);
-  const comidaPerros = res.filter((line) => line.categoryId == 1);
-  const comidaGatos = res.filter((line) => line.categoryId == 3);
-  const productosPerros = res.filter((line) => line.categoryId == 2);
-  const productosGatos = res.filter((line) => line.categoryId == 4);
+  const comidaPerros = res.filter((line) => line.categoryId === 1);
+  const comidaGatos = res.filter((line) => line.categoryId === 3);
+  const productosPerros = res.filter((line) => line.categoryId === 2);
+  const productosGatos = res.filter((line) => line.categoryId === 4);
 
   return (
     <div className="mt-4">

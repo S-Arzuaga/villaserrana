@@ -17,15 +17,15 @@ function Products(props) {
     <div className="Products">
       <div className="Products__container">
         {lineas.map((linea) => (
-          <div className="seccion container">
-            <h2 id={linea.name}>{linea.name}</h2>
+          <div className="seccion container" key={linea.id}>
+            <h2 id={linea.name} key={linea.id}>{linea.name}</h2>
             <div className="products">
               {products
                 .filter((filteredProduct) =>
                   filteredProduct.line.name.includes(linea.name)
                 )
                 .map((filteredProduct2) => (
-                  <div>
+                  <div key={filteredProduct2.id}>
                     <Product product={filteredProduct2} />
                   </div>
                 ))}

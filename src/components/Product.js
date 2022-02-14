@@ -5,7 +5,7 @@ import comida from "../images/comida.png";
 
 function Product(props) {
   const product = props.product;
-  console.log(product.name);
+  
   return (
     <div className="Product">
       <div>

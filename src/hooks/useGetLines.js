@@ -6,7 +6,6 @@ const useGetLines = (API) => {
 
   useEffect(async () => {
     const response = await axios(API);
-    console.log(response.data);
     setLines(response.data);
   }, []);
 

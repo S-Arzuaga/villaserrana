@@ -15,15 +15,15 @@ function NavegacionProductos(props) {
       <button className="btn" onClick={display}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-menu-2"
+          className="icon icon-tabler icon-tabler-menu-2"
           width="72"
           height="72"
           viewBox="0 0 24 24"
-          stroke-width="1.5"
+          strokeWidth="1.5"
           stroke="#ffffff"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <line x1="4" y1="6" x2="20" y2="6" />
@@ -33,7 +33,7 @@ function NavegacionProductos(props) {
       </button>
       <ul id="NavegacionProductos-lista" className="NavegacionProductos_lista">
         {lineas.map((linea) => (
-          <a href={`#${linea.name}`} className="NavegacionProductos_lista-a">
+          <a href={`#${linea.name}`} className="NavegacionProductos_lista-a" key={linea.id}>
             <li className="lista_li">{linea.name}</li>
           </a>
         ))}

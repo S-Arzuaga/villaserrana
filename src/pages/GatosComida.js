@@ -15,8 +15,8 @@ const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
 
 function GatosComida(props) {
   const res = useGetLines(API_LINES);
-  const lines = res.filter((line) => line.categoryId == 3);
-  console.log(lines);
+  const lines = res.filter((line) => line.categoryId === 3);
+  
 
   return (
     <div className="PerrosComida">

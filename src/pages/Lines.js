@@ -5,8 +5,8 @@ import useGetCategories from "../hooks/useGetCategories";
 
 import "../scss/layout/pages/_Lines.scss";
 
-const API_LINES2 = "http://localhost:4000/api/v1/lines";
-const API_CATEGORIES2 = "http://localhost:4000/api/v1/categories";
+// const API_LINES2 = "http://localhost:4000/api/v1/lines";
+// const API_CATEGORIES2 = "http://localhost:4000/api/v1/categories";
 
 const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
 const API_CATEGORIES =
@@ -19,17 +19,17 @@ function Lines(props) {
   };
 
   const [line, setLine] = useState(initialState);
-  console.log(line);
+  
 
   const lines = useGetLines(API_LINES);
-  console.log(lines);
+  
 
   const categories = useGetCategories(API_CATEGORIES);
-  console.log(categories);
+  
 
   const handleInputChange = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
+    // console.log(e.target.name);
+    // console.log(e.target.value);
 
     setLine({
       ...line,

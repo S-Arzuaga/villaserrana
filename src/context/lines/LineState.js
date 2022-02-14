@@ -1,16 +1,14 @@
-import React, { useReducer } from "react";
-import LineReducer from "./LineReducer";
+import React from "react";
+
 import LineContext from "./LinesContext";
 import axios from "axios";
 
 const API = "http://localhost:4000/api/v1/lines";
 
 const LineState = (props) => {
-  const initialState = {
-    lines: [],
-  };
+  
 
-  const [state, dispatch] = useReducer(LineReducer, initialState);
+ 
 
   const getLines = async () => {
     const res = await axios.get(API);

@@ -1,7 +1,5 @@
 import React from "react";
 
-import * as CompaniesServer from "./CompaniesServer";
-
 import AdminProduct from "./AdminProduct";
 import useGetProducts from "../hooks/useGetProducts";
 

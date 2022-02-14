@@ -17,10 +17,10 @@ const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
 
 function ListProducts(props) {
   const res = useGetLines(API_LINES);
-  const comidaPerros = res.filter((line) => line.categoryId == 1);
-  const comidaGatos = res.filter((line) => line.categoryId == 3);
-  const productosPerros = res.filter((line) => line.categoryId == 2);
-  const productosGatos = res.filter((line) => line.categoryId == 4);
+  const comidaPerros = res.filter((line) => line.categoryId === 1);
+  const comidaGatos = res.filter((line) => line.categoryId === 3);
+  const productosPerros = res.filter((line) => line.categoryId === 2);
+  const productosGatos = res.filter((line) => line.categoryId === 4);
 
   const handleClick = (e) => {
     const button = e.target;
