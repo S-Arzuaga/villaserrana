@@ -78,7 +78,7 @@ function ProductForm(props) {
     if (params.id) {
       getProduct(params.id);
     }
-  }, []);
+  }, [params.id]);
 
   const res = useGetLines(API_LINES);
   const comidaPerros = res.filter((line) => line.categoryId === 1);

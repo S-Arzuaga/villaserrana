@@ -4,9 +4,13 @@ import axios from "axios";
 const useGetCategories = (API) => {
   const [categories, setCategories] = useState([]);
 
-  useEffect(async () => {
-    const response = await axios(API);
+  useEffect((API) => {
+    async function fetchData() {
+      const response = await axios(API);
     setCategories(response.data);
+    }
+
+    console.log(fetchData)
   }, []);
 
   return categories;

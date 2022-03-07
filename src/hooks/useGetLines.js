@@ -4,10 +4,14 @@ import axios from "axios";
 const useGetLines = (API) => {
   const [lines, setLines] = useState([]);
 
-  useEffect(async () => {
-    const response = await axios(API);
-    setLines(response.data);
-  }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios(API);
+      setLines(response.data);
+    }
+
+    fetchData()
+  }, [API]);
 
   return lines;
 };
