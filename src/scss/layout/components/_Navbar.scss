@@ -19,11 +19,11 @@
   @include desktop {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    // justify-content: center;
     margin: 0 auto;
     max-width: 1400px;
     height: 73px;
-    padding-top: 0;
+    padding-top: 20px;
   }
 
   .Navbar__menu {
