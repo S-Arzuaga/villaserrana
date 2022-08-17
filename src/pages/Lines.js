@@ -8,9 +8,9 @@ import "../scss/layout/pages/_Lines.scss";
 // const API_LINES2 = "http://localhost:4000/api/v1/lines";
 // const API_CATEGORIES2 = "http://localhost:4000/api/v1/categories";
 
-const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
+const API_LINES = "https://villaserrana-backend.herokuapp.com/api/v1/lines";
 const API_CATEGORIES =
-  "https://aqueous-cove-93793.herokuapp.com/api/v1/categories";
+  "https://villaserrana-backend.herokuapp.com/api/v1/categories";
 
 function Lines(props) {
   const initialState = {

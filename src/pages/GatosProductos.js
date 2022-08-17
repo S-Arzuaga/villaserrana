@@ -7,7 +7,7 @@ import "../scss/layout/pages/_PerrosComida.scss";
 
 import useGetLines from "../hooks/useGetLines";
 
-const API_LINES = "https://aqueous-cove-93793.herokuapp.com/api/v1/lines";
+const API_LINES = "https://villaserrana-backend.herokuapp.com/api/v1/lines";
 
 function PerrosProductos(props) {
   const res = useGetLines(API_LINES);

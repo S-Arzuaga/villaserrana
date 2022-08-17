@@ -6,7 +6,7 @@ import "../scss/layout/components/_Products.scss";
 
 import useGetProducts from "../hooks/useGetProducts";
 
-const API_PRODUCTS = "https://aqueous-cove-93793.herokuapp.com/api/v1/products";
+const API_PRODUCTS = "https://villaserrana-backend.herokuapp.com/api/v1/products";
 
 function Products(props) {
   const products = useGetProducts(API_PRODUCTS);
